@@ -6,7 +6,7 @@ phases:
     # to ECR at a Later Point. 
     commands:
       - echo Logging in to Amazon ECR...
-      - REPOSITORY_URI = ${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/${IMAGE_REPO_NAME}
+      - REPOSITORY_URI=${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/${IMAGE_REPO_NAME}
       - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com
   build:
     # Build the Docker Image from Dockerfile.
